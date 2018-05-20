@@ -1,24 +1,33 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version: 2.5.1
+* Rails version: Rails 5.1.6
+* Database: mysql2
 
-Things you may want to cover:
+* Tests: There are 3 model test cases, and 2 controller test cases (although they are in courses_controller.rb, I have modified them to suit my project)
 
-* Ruby version
+* All these gems are used :
+-devise
+- acts_as_votable
+- cancan
+- carrierwave
+- activeadmin
+- ckeditor_rails
+in addition to the following gems for bootstap and design
+gem 'bootstrap-sass'
+gem 'jquery-rails'
 
-* System dependencies
+* Deployment instructions:
+Note:
+on signing up: it's required to enter a valid email and password because there is email confirmation.
+-In config/development.rb in the hash of: config.action_mailer.smtp_settings please enter an email and password from which the application will send emails to users.
+-If you aren't logged in the website will redirect you to login first 
+To login in admin panel 
+use : email: 'admin@example.com', password: 'password'
+ 
+ 
+ 
+ 
+ 
+ Thanks for reading :)
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
