@@ -1,0 +1,32 @@
+#mysql database
+#
+default: &default
+  adapter: mysql2
+  database: MOOC_Rails
+  username: root
+  password: 1993
+  host: localhost
+  port: 3306
+  strict: false
+
+development:
+  <<: *default
+  database: MOOC_Rails
+  strict: false
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: MOOC_test
+  strict: false
+production:
+  <<: *default
+  adapter: mysql2
+  encoding: utf8
+  database: <%= ENV['RDS_DB_NAME']%>
+  username: <%= ENV['RDS_USERNAME']%>
+  password: <%= ENV['RDS_PASSWORD']%>
+  host: <%= ENV['RDS_HOSTNAME']%>
+  port: <%= ENV['RDS_PORT']%>
+  strict: false

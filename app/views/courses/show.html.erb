@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h2>
+  <strong>Title:</strong>
+  <%= @course.title %>
+  <% if can? :update, Lecture %>
+<%= link_to  edit_course_path(@course) do%> 
+  <button type="button" class="btn btn-primary"> Edit course title</button>
+  <%end%>
+<%end%>
+</h2>
+<% i=1%>
+<table class="table">
+<% @course.lectures.each do |lecture| %>
+
+  <tr>
+  <th>Lecture <%=i%> </th>
+  </tr>
+  <tr>
+  <td><%= lecture.content %></td>
+  <td><%= link_to  course_lecture_url(@course.id, lecture.id) do%>
+    <button type="button" class="btn btn-info">Display lecture</button>
+    <%end%>
+    </td>
+  </tr>
+  
+<% i+=1%>
+  <% end %>  
+  </table>
+</p>
+<% if can? :create, Lecture %>
+<%= link_to new_course_lecture_path(@course) do%>
+  <div class="text-center"> <button class="btn btn-primary">New Lecture</btn></div>
+  <%end%>
+<% end %>
+
+<br/>
+<%= link_to 'Back', courses_path %>

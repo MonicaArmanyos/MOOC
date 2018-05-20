@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Courses</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @courses.each do |course| %>
+      <tr>
+        <td style="font-size:16px"><strong><%= course.title %><strong></td>
+        <td><%= link_to  course do%>
+          <button type="button" class="btn btn-info">Show Course</button>
+          <%end%>
+          </td>
+        <% if can? :update, Course %>
+        <td><%= link_to  edit_course_path(course) do%>
+          <button type="button" class="btn btn-primary"> Edit course title</button>
+          <%end%>
+          </td>
+        <% end %>
+        <% if can? :destroy, Course %>
+        <td><%= link_to course, method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <button type="button" class="btn btn-danger">Delete whole course</button>
+        <%end%>
+        </td>
+        <% end %> 
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<% if can? :create, Course %>
+<%= link_to  new_course_path do %>
+  <div class="text-center"><button type="button" class="btn btn-primary">New Course</button></div>
+<% end %>
+<% end %>

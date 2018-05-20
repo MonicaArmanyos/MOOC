@@ -1,0 +1,8 @@
+
+<% if(current_user.liked? @lecture)%>
+ $(".likes_count").html("<%=@lecture.get_upvotes.size%>"); 
+$(".like_btn").addClass('liked');
+<% else %>
+$(".likes_count").html("<%=@lecture.get_upvotes.size%>"); 
+$(".like_btn").removeClass('liked');
+<% end %>

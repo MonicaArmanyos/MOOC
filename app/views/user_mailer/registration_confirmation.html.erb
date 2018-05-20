@@ -1,0 +1,4 @@
+Hi <%= @user.name %>,
+Thanks for registering ! To confirm your registration , Please click the link below :
+
+<a href="http://localhost:3000/users/<%=@user.confirm_token%>/confirm_email"> Activate from here </a>
