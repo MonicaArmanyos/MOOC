@@ -84,6 +84,8 @@ GEM
       mime-types (>= 1.16)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
+    ckeditor_rails (4.8.0)
+      railties (>= 3.0)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -269,6 +271,7 @@ DEPENDENCIES
   cancancan (~> 2.0)
   capybara (~> 2.13)
   carrierwave (~> 1.2, >= 1.2.2)
+  ckeditor_rails
   coffee-rails (~> 4.2)
   devise
   jbuilder (~> 2.5)
