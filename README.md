@@ -1,10 +1,10 @@
 # README
 
 * Ruby version: 2.5.1
-
+* Rails version: Rails 5.1.6
 * Database: mysql2
 
-* How to run the test: There are 3 model test cases, and 2 controller test cases (although they are in courses_controller.rb, I have modified them to suit my project)
+* Tests: There are 3 model test cases, and 2 controller test cases (although they are in courses_controller.rb, I have modified them to suit my project)
 
 * All these gems are used :
 -devise
