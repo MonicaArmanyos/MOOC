@@ -13,6 +13,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require ckeditor-jquery
 //  $(document).on('turbolinks:load', function() {
 
 //     $('form').on('click', '.remove_record', function(event) {
