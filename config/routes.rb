@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # end
   resources :courses do |course|
     resources :lectures, :except =>[:index] do
-      resources :comments, :except =>[:new, :index,:show]
+      resources :comments, :except =>[:new, :index,:show, :edit]
     get '/lectures' => 'courses#show', as: :lectures_path
     member do
       put "like" => 'lectures#vote'
